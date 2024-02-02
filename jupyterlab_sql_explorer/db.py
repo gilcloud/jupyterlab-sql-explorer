@@ -217,6 +217,6 @@ def get_schema_or_table(dbid, schema):
             tables=[]
             for r in query(dbid, "show tables", db=schema):
                 tables.append({'name': r[0], 'desc': '', 'type': 'table'})
-            tables = comments.match_schema(dbid, schema, tables)
+            tables = comments.match_table(dbid, schema, tables)
             return tables
 
